@@ -45,10 +45,10 @@ export function handleNewEventCreated(event: NewEventCreated): void {
         }
 
         if (imagePath) {
-          const imageURL =
-            "https://ipfs.io/ipfs/" + event.params.eventDataCID + imagePath.toString();
+          const imageURL = "https://ipfs.io/ipfs/".toString();
           newEvent.imageURL = imageURL;
         } else {
+          // return fallback image if no imagePath
           const fallbackURL = "https://ipfs.io/ipfs/bafybeibssbrlptcefbqfh4vpw2wlmqfj2kgxt3nil4yujxbmdznau3t5wi/event.png";
           newEvent.imageURL = fallbackURL;
         }
